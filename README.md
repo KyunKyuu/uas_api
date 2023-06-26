@@ -20,3 +20,7 @@ Langkah Instalasi
    Untuk route yang lain, "Review", dan "Keranjang" lakukan saja seperti biasa, karna saya menggunakan 1 return json, dan menggunakan ajax di 
    view nya
 
+
+2. Untuk jumlah route nya bisa dilihat di Route API.php
+   ![image](https://github.com/KyunKyuu/uas_api/assets/57865250/b838aa57-8e10-4c81-ab7c-2e339342a87b)
+
