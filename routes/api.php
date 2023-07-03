@@ -20,28 +20,26 @@ use App\Http\Controllers\ReviewController;
 //     return $request->user();
 // });
 
-Route::get('/', [ProdukController::class, 'index']);
+
 Route::get('/produk', [ProdukController::class, 'produkRead']);
 Route::get('/produk/search', [ProdukController::class, 'search']);
 Route::get('/produk/{id}', [ProdukController::class, 'show']);
-Route::get('/keranjang', [KeranjangController::class, 'index']);
-Route::get('/reviews', [ReviewController::class, 'index']);
+Route::post('/produk', [ProdukController::class, 'store']);
+Route::put('/produk/{id}', [ProdukController::class, 'update']);
+Route::delete('/produk/{id}', [ProdukController::class, 'destroy']);
+
+Route::get('/reiews', [ReviewController::class, 'index']);
 Route::get('/reviews/search', [ReviewController::class, 'search']);
 Route::get('/reviews/orderBy', [ReviewController::class, 'sortBy']);
-
-
-
-
 Route::post('/reviews', [ReviewController::class, 'store']);
-Route::post('/produk', [ProdukController::class, 'store']);
-Route::post('/keranjang', [KeranjangController::class, 'store']);
-
-Route::put('/produk/{id}', [ProdukController::class, 'update']);
 Route::put('/reviews/{id}', [ReviewController::class, 'update']);
-
-Route::delete('/produk/{id}', [ProdukController::class, 'destroy']);
-Route::delete('/keranjang/{id}', [KeranjangController::class, 'destroy']);
 Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
+
+Route::get('/', [ProdukController::class, 'index']);
+Route::get('/keranjang', [KeranjangController::class, 'index']);
+Route::post('/keranjang', [KeranjangController::class, 'store']);
+Route::delete('/keranjang', [KeranjangController::class, 'destroy']);
+
 
 
 

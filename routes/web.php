@@ -33,7 +33,6 @@ Route::post('/keranjang', [KeranjangController::class, 'store']);
 Route::post('/reviews', [ReviewController::class, 'store']);
 Route::post('/checkout/{id}', [StripeController::class, 'checkout']);
 
-
 Route::put('/produk/{id}', [ProdukController::class, 'update']);
 Route::put('/reviews/{id}', [ReviewController::class, 'update']);
 
