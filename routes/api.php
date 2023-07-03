@@ -20,6 +20,10 @@ use App\Http\Controllers\ReviewController;
 //     return $request->user();
 // });
 
+Route::get('/', [ProdukController::class, 'index']);
+Route::get('/keranjang', [KeranjangController::class, 'index']);
+Route::post('/keranjang', [KeranjangController::class, 'store']);
+Route::delete('/keranjang', [KeranjangController::class, 'destroy']);
 
 Route::get('/produk', [ProdukController::class, 'produkRead']);
 Route::get('/produk/search', [ProdukController::class, 'search']);
@@ -35,10 +39,7 @@ Route::post('/reviews', [ReviewController::class, 'store']);
 Route::put('/reviews/{id}', [ReviewController::class, 'update']);
 Route::delete('/reviews/{id}', [ReviewController::class, 'destroy']);
 
-Route::get('/', [ProdukController::class, 'index']);
-Route::get('/keranjang', [KeranjangController::class, 'index']);
-Route::post('/keranjang', [KeranjangController::class, 'store']);
-Route::delete('/keranjang', [KeranjangController::class, 'destroy']);
+
 
 
 
