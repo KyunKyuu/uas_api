@@ -22,7 +22,7 @@ use App\Http\Controllers\ReviewController;
 
 Route::get('/', [ProdukController::class, 'index']);
 
-Route::get('/produk', [ProdukController::class, 'produkRead']);
+Route::get('/produk', [ProdukController::class, 'index']);
 Route::get('/produk/search', [ProdukController::class, 'search']);
 Route::get('/produk/{id}', [ProdukController::class, 'show']);
 Route::post('/produk', [ProdukController::class, 'store']);
