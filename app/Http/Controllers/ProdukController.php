@@ -51,13 +51,11 @@ class ProdukController extends Controller
         'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-
        if ($request->hasFile('gambar')) {
             $gambarPath = $request->file('gambar')->store('produk', 'public');
        } else {
             $gambarPath = null;
        }
-
 
         $produk = Produk::create([
             'nama' => $validatedData['nama'],
@@ -109,7 +107,6 @@ class ProdukController extends Controller
     $produk = Produk::findOrFail($id);
     $data = $request->all();
 
-
     if ($request->hasfile('gambar')) {
 
         Storage::disk('public')->delete($produk->gambar);
@@ -121,7 +118,6 @@ class ProdukController extends Controller
     }
 
     $produk->update($data);
-
     $convertJson = response()->json($produk);
 
     if (request()->wantsJson()) {

@@ -35,7 +35,7 @@
 
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">{{$item->kategori}}</div>
 
-                            <img class="card-img-top" src="{{isset($item->gambar) ? asset('storage/' . $item->gambar) : asset('image/default.png')}}" alt="..." />
+                           <a href="{{'/produk/'. $item->id}}" > <img class="card-img-top" src="{{isset($item->gambar) ? asset('storage/' . $item->gambar) : asset('image/default.png')}}" alt="..." /> </a>
 
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -47,7 +47,16 @@
                             </div>
 
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="{{'/produk/'. $item->id}}">Lihat Detail</a></div>
+
+                                <a class="btn btn-info mb-3" href="{{'/produk/edit/'. $item->id}}">
+                                 Edit
+                                </a>
+
+                                <form action="{{ url('/produk/'.$item->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </form>
                             </div>
                         </div>
                     </div>
